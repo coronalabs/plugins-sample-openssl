@@ -1,5 +1,5 @@
 --------------------------------------------------------------------------------
--- Sample code is MIT licensed, see http://www.coronalabs.com/links/code/license
+-- Sample code is MIT licensed, see https://coronalabs.com/links/code/license
 -- Copyright (C) 2016 Corona Labs Inc. All Rights Reserved.
 --------------------------------------------------------------------------------
 

@@ -1,0 +1,30 @@
+settings = 
+{
+	iphone =
+	{
+		plist =
+		{
+			CFBundleIconFile = "Icon.png",
+			CFBundleIconFiles = {
+				"Icon.png", 
+				"Icon@2x.png", 
+				"Icon-72.png", 
+			},
+		},
+	},
+
+	androidPermissions =
+	{
+		"android.permission.WRITE_EXTERNAL_STORAGE"
+	},
+
+	plugins =
+	{
+		-- key is the name passed to Lua's 'require()'
+		["plugin.openssl"] =
+		{
+			-- required
+			publisherId = "com.coronalabs",
+		},
+	},
+}
