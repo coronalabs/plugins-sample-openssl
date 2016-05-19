@@ -1,36 +1,39 @@
 settings =
 {
-        orientation =
-        {
-                default = "portrait",
-				supported = { "portrait" }
-        },
-		iphone =
+	orientation =
+	{
+		default = "portrait",
+		supported = { "portrait" }
+	},
+
+	iphone =
+	{
+		plist =
 		{
-			plist =
-			{
-		        CFBundleIconFile = "Icon.png",
-		        CFBundleIconFiles = {
-		           "Icon.png", 
-		           "Icon@2x.png", 
-		           "Icon-72.png", 
-		        },
+			CFBundleIconFile = "Icon.png",
+			CFBundleIconFiles = {
+				"Icon.png", 
+				"Icon@2x.png", 
+				"Icon-72.png", 
 			},
 		},
-		android =
+	},
+
+	android =
+	{
+		usesPermissions =
 		{
-			usesPermissions =
-			{
-				"android.permission.INTERNET",
-			},
+			"android.permission.INTERNET",
 		},
-		plugins =
+	},
+
+	plugins =
+	{
+		-- key is the name passed to Lua's 'require()'
+		["plugin.openssl"] =
 		{
-			-- key is the name passed to Lua's 'require()'
-			["plugin.openssl"] =
-			{
-				-- required
-				publisherId = "com.coronalabs",
-			},
+			-- required
+			publisherId = "com.coronalabs",
 		},
+	},
 }

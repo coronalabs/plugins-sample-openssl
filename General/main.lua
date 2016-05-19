@@ -1,9 +1,18 @@
 --------------------------------------------------------------------------------
 -- Sample code is MIT licensed, see http://www.coronalabs.com/links/code/license
--- Copyright (C) 2012 Corona Labs Inc. All Rights Reserved.
+-- Copyright (C) 2016 Corona Labs Inc. All Rights Reserved.
 --------------------------------------------------------------------------------
 
-print( "OpenSSL sample start." )
+--
+-- Demonstrates various features of the OpenSSL plugin (Big Numbers, encryption, x509)
+--
+
+local greeting = display.newText("OpenSSL tests - see console for results", display.actualContentWidth/2, 20)
+
+print( "OpenSSL sample start" )
+
+Runtime:setCheckGlobals( true )
+local crypto = require "crypto"
 
 local openssl = require('plugin.openssl')
 local util = require('util')
@@ -34,7 +43,7 @@ if false then
 	-- test bn ("BIGNUM") library
 	local bn = openssl.bn
 	------------------------------------------------------------------------------
-	print(bn.version)
+	print("bn.version: ", bn.version)
 	print()
 
 	p=bn.aprime(100)
@@ -80,7 +89,6 @@ if false then
 		assert(y==message)
 
 	print()
-	print(bn.version)
 
 	d=bn.number"X816f0d36f0874f9f2a78acf5643acda3b59b9bcda66775b7720f57d8e9015536160e728230ac529a6a3c935774ee0a2d8061ea3b11c63eed69c9f791c1f8f5145cecc722a220d2bc7516b6d05cbaf38d2ab473a3f07b82ec3fd4d04248d914626d2840b1bd337db3a5195e05828c9abf8de8da4702a7faa0e54955c3a01bf121"
 	m=bn.number"Xbfedeb9c79e1c6e425472a827baa66c1e89572bbfe91e84da94285ffd4c7972e1b9be3da762444516bb37573196e4bef082e5a664790a764dd546e0d167bde1856e9ce6b9dc9801e4713e3c8cb2f12459788a02d2e51ef37121a0f7b086784f0e35e76980403041c3e5e98dfa43ab9e6e85558c5dc00501b2f2a2959a11db21f"
@@ -271,11 +279,11 @@ if false then
 	print( m1 )
 
 	if m == m1 then
-		print( "Good." )
+		print( "Good" )
 	else
-		print( "Bad." )
+		print( "Bad" )
 	end
 
 end
 
-print( "OpenSSL sample done." )
+print( "OpenSSL sample done" )
